@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+    include ../partials/head.pug
+    body
+        nav
+            div.refresh
+                ul
+                    li
+                        i.fas.fa-gamepad.logo
+                    li
+                        h1 Name Game
+
+        section
+            .box
+                .start-btns
+                    h2 Click on a button.
+                    button.main-btn.host-btn Host
+                    button.main-btn.join-btn Join
+                .host-menu
+                    h3.bold You're the host!
+                    p Lobby code:
+                    p.code $LOBBYCODE
+                .join-menu
+                    h3 Enter lobby code:
+                    form(action="/join-lobby").code-form
+                        input(type="text", name="code", placeholder="H2N4FJ", maxlength=6).code-input
+                        button(type="submit").code-submit Done
+
+        include ../partials/footer.pug
